@@ -1,0 +1,338 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{mathabx}
+
+\title{Mathe Formelsammlung Oberstufe}
+\author{Gianluca Volkmer}
+
+\begin{document}
+\maketitle
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\section{Algebra}
+
+\subsection{Mittelpunkt zwischen zwei Punkten bestimmen}
+Gegeben sind die Punkte $A = (a_1 | a_2 | a_3)$ und $B = (b_1 | b_2 | b_3)$. Zum berechnen des Punktes welcher sich genau in der Mitte der gegebenen Punkte befindet addiert man jede Koordinate mit der korrespondierenden des andern und dividiert dies durch 2.
+\begin{equation}
+M_ab = (\frac{a_1+b_1}{2} | \frac{a_2+b_2}{2} | \frac{a_3+b_3}{2})
+\end{equation}
+
+\subsection{Vektor aufstellen aus 2 Punkten} \label{VektorAufstellen}
+Gegeben sind die Punkte $A = (a_1 | a_2 | a_3)$ und $B = (b_1 | b_2 | b_3)$. Zum aufstellen des Vektors subtrahiert man jede Koordinate des Punktes mit der des anderem. ACHTUNG: man beginnt immer mit dem Ziel Punkt.
+\begin{equation}
+\vec{AB} = \begin{pmatrix} b1-a1 \\ b2-a2 \\ b3-a3 \end{pmatrix}
+\end{equation}
+
+\subsection{Betrag bestimmen}
+Der Betrag kann sowohl aus einer Zahl und einem Vektor bestimmt werden. Diese Mathematische Operation wird immer mit zwei "Betrags Striche" symbolisiert ($|X|$) 
+
+\subsubsection{Betrag aus einer Zahl bestimmen}
+Der Betrag aus einer Zahl ist immer die selbe Zahl jedoch Positiv. So ist der Betrag aus $|5| = 5$ und der Betrag aus $|-5| = 5$.
+
+\subsubsection{Betrag eines Vektor bestimmen (Länge eines Vektor)} \label{BetragVektor}
+Gegeben ist ein Vektor $\vec{AB} = \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}$. Man erhält die Länge des Vektors indem man die Wurzel aus dem Produkt des Quadrates jeder Koordinate (TODO: ANDERER BEGRIFF BENÖTIGT) nimmt.
+\begin{equation}
+\vec{AB} = \sqrt[]{x_1^2 + x_2^2 + x_3^2}
+\end{equation}
+
+\subsection{Einen Vektor in einen Einheitsvektor umwandeln} \label{Einheitsvektor}
+Ein Einheitsvektor ist ein Vektor mit der Länge 1. Diesen Bildet man indem man den Vektor $\vec{x}$ durch seine eigene Länge teilt.
+\begin{equation}
+\vec{x_0} = \frac{\vec{x}}{ | \vec{x} | } = \begin{pmatrix}
+\frac{x_1}{ | \vec{x} | } \\
+\frac{x_2}{ | \vec{x} | } \\
+\frac{x_3}{ | \vec{x} | }
+\end{pmatrix}
+\end{equation}
+
+\subsection{Geradengleichung aufstellen}
+Zur Aufstellung einer Geradengleichung werden zwei Punkte Benötigt: $A = (a_1 | a_2 | a_3)$; $B = (b_1 | b_2 | b_3)$. Die Geradengleichung besteht dann aus dem Ortsvektor ($\vec{OA}$) des einen Punktes und dem Richtungsvektor ($\vec{AB}$) von den beiden gegebenen Punkten. Der Richtungsvektor wird wiederum mit einer Variable multipliziert.
+\begin{equation}
+g : \vec{x} = \vec{OA} + r * \vec{AB}
+\end{equation}
+
+\begin{equation}
+g : \vec{x} = \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} + r * \begin{pmatrix} b_1 - a_1 \\ b_2 - a_2 \\ b_3 - a_3 \end{pmatrix}
+\end{equation}
+
+\subsection{Punktprobe}
+Die Punktprobe wird dafür genutzt um zu berechnen ob ein gegebener Punkt $A = (a_1 | a_2 | a_3)$ sich auf der Geradengleichung $g : \vec{x} = \vec{OD} + r * \vec{DF}$ befindet.
+Man setzt dafür den Ortsvektor des Punktes = der Geradengleichung.
+\begin{equation}
+\vec{OA} = \vec{OD} + r * \vec{DF}
+\end{equation}
+
+\begin{equation}
+\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} = \begin{pmatrix} d_1 \\ d_2 \\ d_3 \end{pmatrix} + r * \begin{pmatrix} f_1 - d_1 \\ f_2 - d_2 \\ f_3 - d_3 \end{pmatrix}
+\end{equation}
+
+Dies kann man nun mit einem LGS (Lineares Gleichungssystem) lösen. Wenn alle $r$ den selben Wert besitzen befindet sich der Punkt auf der Geradengleichung ($A \in g$), falls dies nicht der Fall sein sollte trift das Gegenteil zu ($A \notin g$).
+
+\subsection{Lineare Abhängigkeit von 2 Vektoren überprüfen}
+2 Vektoren sind linear abhängig wenn sie den selben wert besitzen nach der Anwenung eines Faktors. Hierzu setzt man die beiden Vektoren gleich und multipliziert den einen der beiden Vektoren mit einem Faktor ($r$).
+
+\begin{equation}
+\begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} = r * \begin{pmatrix} b_1 \\ b_2 \\ b_3\end{pmatrix}
+\end{equation}
+
+Diese Gleichung kann man mit einem LGS (Lineares Gleichungssystem) lösen. Wenn im LGS alle Faktoren den selben wert besitze sind die Beiden Vektoren Linear abhängig, anderen falls Linear unabhängig.
+
+\subsection{Lagebeziehung von Geradengleichungen überprüfen}
+Gegeben sind zwei Geradengleichungen:$g : \vec{x} = \vec{OA} + r * \vec{AB}$; $h : \vec{x} = \vec{OC} + s * \vec{CD}$. Um deren Lagebeziehung zum überprüfen muss man 2 Schritte durchlaufen.
+
+\subsubsection{Überprüfung ob Richtungsvektoren linear abhängig sind}
+Zunächst überprüft man ob die Richtungsvektoren ($\vec{AB}$ und $\vec{CD}$) beider Funktionen linear abhängig sind. Falls dies der Fall ist muss nun die Punktprobe erfolgen, da wir wissen, dass die Geradengleichungen beide in die "selbe Richtung" verlaufen. Im anderen fall muss mit dem Gleichstellen der Geradengleichungen überprüft werden ob sie sich schneiden oder windschief zueinander sind.
+
+\subsubsection{Punktprobe zur Überprüfung der Geradengleichungen}
+Man erstellt eine Punktprobe des einen Ortsvektor mit der anderen Gerade. Dies bedeutet, das man sowohl $\vec{OA} = h$ bestimmen kann als auch $\vec{OC} = g$.
+
+Ergibt die Punktprobe, dass der Punkt in der Geraden ist, sind die beiden Geraden identisch ($\vec{OA} \in h$ oder $\vec{OC} \in g$). Ist dies nicht der Fall sind die beiden Geraden paralel ($\vec{OA} \notin h$ oder $\vec{OC} \notin g$).
+
+\subsubsection{Gleichstellung der Geradengleichungen}
+Man stelle die beiden Geraden gleich $g = h$. Diese Gleichung löst man nun auf (Beispielsweise mit linsolve). Ergibt dies ein eindeutiges ergebniss für die beiden Variablen, schneiden sich die geraden $g$ und $h$. Falls keine eindeutige Lösung zustande kommt, sind die beiden Geraden windschief. 
+
+\subsection{Skalarprodukt: Bestimmung von der Orthogonalität (Rechtwinklig) von Vektoren}
+Gegeben sind zwei Vektoren derer Orthogonalität man bestimmen möchte. $\vec{A}$ und $\vec{B}$. Hierzu erzeugt man das Skalarprodukt der beiden Vektoren.
+\begin{equation}
+\vec{A} \circ \vec{B} = \begin{pmatrix} a_1 \\ a_2 \\ a_3\end{pmatrix} \circ \begin{pmatrix} b_1 \\ b_2 \\ b_3\end{pmatrix} = a_1*b_1 + a_2*b_2 + a_3*b_3
+\end{equation}
+Ist das Skalarprodukt der beiden Vektoren $= 0$ so gilt $\vec{A} \perp \vec{B}$. Ist es jedoch das Skalarprodukt $> 0$ so gilt $\vec{A} \notperp \vec{B}$
+
+\subsection{Bestimmung des Winkels zwischen zwei Vektoren}
+Gegeben sind zwei Vektoren: $\vec{A}$ und $\vec{B}$. Um nun den Winkel zwischen den beiden Vektoren zu bestimmen muss man den Quotienten des Skalarproduktes von $\vec{A}$ und $\vec{B}$ und des Produktes von den Beträgen von $\vec{A}$ und $\vec{B}$ im Cosinus-1 packen.
+
+\begin{equation}
+\alpha = \cos^{-1} ( \frac{\vec{A} \circ \vec{B}}{|\vec{A}| * |\vec{B}|} )
+\end{equation}
+
+\subsection{Kompaktvektor bestimmen}
+Der Kompaktvektor ist nichts anderes als eine zusammengefasste Geradengleichung oder Ebenengleichung.
+
+\subsubsection{Kompaktvektor einer Geradengleichung} \label{KompaktvektorDerGeradengleichung}
+Der Kompaktvektor einer Geradengleichung setzt sich zusammen wie folgt:
+\begin{equation}
+g : \vec{x} = \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} a_1 \\ a_2 \\ a_3  \end{pmatrix} + r * \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} = \begin{pmatrix} a_1 + r * b_1 \\ a_2 + r * b_2 \\ a_3 + r * b_3 \end{pmatrix}
+\end{equation}
+Der Vektor am ende der Gleichung ist der Kompaktvektor der Geraden.
+
+\subsubsection{Kompaktvektor einer Ebenengleichung in der Parameterform}
+Der Kompaktvektor einer Ebenengleichung in der Parameterform wird wie folgt gebildet:
+\begin{equation}
+E : \vec{x} = \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix} + r * \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} + s * \begin{pmatrix} c_1 \\ c_2 \\ c_3 \end{pmatrix} = \begin{pmatrix} a_1 + r * b_1 + s * c_1 \\ a_2 + r * b_2 + s * c_2 \\ a_3 + r * b_3 + s * c_3 \end{pmatrix}
+\end{equation}
+Der Vektor am ende der Gleichung ist der Kompaktvektor der Ebenengleichung.
+
+\subsection{Ebenengleichung} \label{Ebenengleichungen}
+Die Ebenengleichung beschreibt eine Ebene in einem Grafen. Diese Ebenengleichung kann in verschiedenen Formen angegeben werden.
+
+\subsubsection{Ebenengleichung in der Parametergleichung}
+Um eine Zweidimensionale ebene auf zu spannen benötigt man 1 Stützvektor $\vec{OA}$ (Uhrsprung der Ebene) und 2 Spannvektoren $\vec{AB}$ und $\vec{AC}$. Zu beachten ist, dass die beiden Spannvektoren linear unabhängig von einander sind!
+Die Ebenengleichung wird dann so aufgestellt:
+\begin{equation}
+E : \vec{x} = \vec{OA} + r * \vec{AB} + s * \vec{AC}
+\end{equation}
+
+\subsubsection{Ebenengleichung in der Normalform}
+Um eine Ebene in der Normalform aufzuspannen benötigt man einen Orthogonalen Vektor (Normalvektor) $\vec{n}$ zur Ebene und einen Punkt in der Ebene $P = (p_1 |p_2 | p_3)$. Die Ebengleichung wird nun aus dem Produkt des Normalvektors ($\vec{n}$) und dem PX ($\vec{PX}$) gebildet.
+\begin{equation}
+0 = \vec{n} \circ \vec{PX}
+\end{equation} 
+\begin{equation}
+0 = \vec{n} \circ \begin{bmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} &  - &  \begin{pmatrix} p_1 \\ p_2 \\ p3 \end{pmatrix} \end{bmatrix}
+\end{equation}  
+
+\subsubsection{Ebenengleichung in der Koordinatenform}\label{sec:Koordinatenform}
+Die Ebenengleichung in der Koordinatenform kann durch 2 Wege erzeugt werden. Zum einen ist es möglich die Ebenengleichung zu formen durch das Aus multiplizieren der Normalform und zum anderen durch 3 gegebene Punkte.
+
+Das Aus multiplizieren der Normalform funktioniert so:
+\begin{equation}
+0 = \vec{n} \circ \begin{bmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} &  - &  \begin{pmatrix} p_1 \\ p_2 \\ p3 \end{pmatrix} \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+0 = \vec{n} \circ \vec{X} - (\vec{n} \circ \vec{P})
+\end{equation}
+
+\begin{equation}
+0 = n_1 * x_1 + n_2 * x_2 + n_3 * x_3 - (n_1 * p_1 + n_2 * p_2 + n_3 * p_3)
+\end{equation}
+Das Skalarprodukt von $\vec{n}$ und $\vec{P}$ fassen wir als $d$ zusammen. Das heißt die Formel lautet zum Schluss:
+
+\begin{equation}
+0 = n_1 * x_1 + n_2 * x_2 + n_3 * x_3 - d
+\end{equation}
+Oder
+\begin{equation}
+d = n_1 * x_1 + n_2 * x_2 + n_3 * x_3
+\end{equation}
+
+Zum Aufstellen der Koordinatenform mit 3 Punkten erstellt man aus den drei Punkten $A = (a_1 | a_2 | a_3)$, $B = (b_1 | b_2 | b_2)$, $C = (c_1 | c_2 | c_3)$ ein Linearesgleichungssystem.
+\begin{equation}
+\begin{matrix}
+a_1 * y_1 + a_2 * y_2 + a_3 * y_3 = d \\
+b_1 * y_1 + b_2 * y_2 + b_3 * y_3 = d \\
+c_1 * y_1 + c_2 * y_2 + c_3 * y_3 = d
+\end{matrix}
+\end{equation}
+Dieses Linearesgleichungssystem löst man nun auf und erhält die drei Werte: $y_1 = z_1 * d$, $y_2 = z_2 * d$, $y_3 = z_3 * d$. Nun setzt man für $d$ einen Wert ein (1 Passt normalerweise gut) und bekommt die werte für $y$. Diese werte trägt man nur noch in die Parameterform ein.
+\begin{equation}
+d = y_1 * x_1 + y_2 * x_2 + y_3 * x_3
+\end{equation}
+
+\subsection{Umwandlung von den Ebenengleichungsformen} \label{UmformenDerEbenengleichung}
+Die Ebenengleichung kann in die 3 verschiedenen Formen umgewandelt werden.
+\subsubsection{Ebenengleichung in der Parameterform in die Normalform umwandeln} \label{ParameterformInNormalform}
+Um die Ebenengleichung in der Parameterform $E : \vec{x} = \vec{OA} + r * \vec{AB} + s * \vec{AC}$ in die Normalform $E: 0 = \vec{n} \circ  \begin{bmatrix} \vec{x} & - & \vec{p} \end{bmatrix}$ muss man aus den beiden Stützvektoren der Parameterform einen Normalvektor aufstellen. Dieser Normalvektor muss Ohrtogonal zu beiden Stützvektoren sein $\vec{AB} \perp \vec{n} \perp \vec{AC}$. Diesen Vektor kann man durch ein Linearesgleichungssystem bestimmen welches das Skalarprodukt der Vektoren bildet (bekannt sind $\vec{AB}$ und $\vec{AC}$) : 
+\begin{equation}
+\begin{matrix}
+ab_1 * n_1 + ab_2 * n_2 + ab_3 * n_3 = 0 \\
+ac_1 * n_1 + ac_2 * n_2 + ac_3 * n_3 = 0
+\end{matrix}
+\end{equation}  
+Dieses LGS muss man nun nur noch auflösen und erhält dann einen $\vec{n}$. Nun benötigt man nur noch einen Punkt in der Ebene. Dieser kann der Stützvektor der Geraden sein (Muss aber nicht der sein. Je nach Aufgabenstellung Variiert es). In diesem Fall würden wir die Ebenengleichung: $0 = \vec{n} \begin{bmatrix}\vec{x} & - & \vec{OA}\end{bmatrix}$ bilden.
+
+\subsubsection{Ebenengleichung von der Normalform in die Koordinatenform umwandeln} \label{NormalenformInKoordinatenform}
+Dies wurde schon in \ref{sec:Koordinatenform} besprochen. Einfach in dem Kapitel nachlesen.
+
+\subsubsection{Ebenengleichung von der Koordinatenform in die Parameterform umwandeln}
+Um aus der Koordinatenform $E : 0 = a_1 * x_1 + a_2 * x_2 + a_3 * x_3 - d$ in die Parameterform $E : \vec{x} = \vec{OA} + r * \vec{AB} + s * \vec{AC}$ zu gelangen, berechnet man drei Punkte aus der Koordinatenform (für $x_1$, $x_2$ und $x_3$ werte Einsetzen). Hierzu Empfiehlt es sich immer alle Werte auf 0 zu setzen bis auf einen der Werte.
+\begin{equation}
+\begin{matrix}
+0 = a_1 * 1 + a_2 * 0 + a_3 * 0 \\
+0 = a_2 * 0 + a_2 * 1 + a_3 * 0 \\
+0 = a_3 * 0 + a_3 * 0 + a_3 * 1
+\end{matrix}
+\end{equation}
+Aus diesen Ergebnissen erlangt man 3 Punkte die wie Folgt aussehen:
+\begin{equation}
+\begin{matrix}
+A = (a_1 | 0 | 0) \\
+B = (0 | a_2 | 0) \\
+C = (0 | 0 | a_3) 
+\end{matrix}
+\end{equation}
+Aus diesen drei Punkten kann man nun die Parametergleichung $E : \vec{x} = \vec{OA} + r * \vec{AB} + s * \vec{AC}$ aufstellen.
+
+\subsection{Lagebeziehung zwischen Gerade und Ebene bestimmen}
+Um die Lagebeziehung einer Geraden $g : \vec{x} = \vec{A} + s * \vec{B}$ und einer Ebene $E : \vec{x} = \vec{C} + r * \vec{D} + t * \vec{E}$ muss man diese Gleichsetzen und soweit umformen, dass auf der Einen Seite nur noch Vektoren mit Variabeln und auf der anderen Seite nur noch Vektoren ohne Variabeln.
+\begin{equation}
+\begin{matrix}
+g = E \\
+\vec{A} + s * \vec{B} = \vec{C} + r * \vec{D} + t * \vec{E} & | - \vec{C} | - (s* \vec{B}) \\
+\vec{A} - \vec{C} = r * \vec{D} + t * \vec{E} + s * \vec{B}
+\end{matrix}
+\end{equation}
+Nun löst man das LGS und schaut ob Widersprüche vorhanden sind. Bekommt man beim lösen des LGS ein Ergebnis wie $0 = 0$ so befindet sich die Gerade in der Ebene, da es unendlich viele Schnittpunkte gibt. Bekommt man ein Ergebnis wie $0 = x$, wobei $x \neq 0$, so schneiden sich die Gerade und die Ebene nicht. Bekommt man jedoch eindeutige Ergebnisse für $s$, $r$ und $t$ so schneiden sich die Gerade und die Ebene. Diese Werte musst man nun in eine der Gleichungen einsetzen um den Schnittpunkt $S$ zu erlangen. 
+
+\subsection{Abstandsprobleme zwischen Punkten, Geraden und Ebenen}
+Im Abstandsproblem wird der kleinste Abstand zwischen Punkt, Gerade und Ebene zu etwas gesucht. 
+\subsubsection{Abstand von 2 Punkten} \label{Abstand2Punkte}
+Zunächst erstellt man einen Vektor aus den beiden Punkten wir in Kapitel: \ref{VektorAufstellen}, danach Bildet man den Betrag des Vektors wie es in \ref{BetragVektor} beschrieben wurde. Das Ergebnis ist der Abstand zwischen den beiden Punkten.
+
+\subsubsection{Abstand Punkt und Gerade} \label{PunktGeradeAbstand}
+Um den Abstand zwischen einem Punkt und einer Gerade zu bestimmen gibt es mehrere Wege:
+
+\paragraph{Abstand Punkt - Gerade mittelst Hilfsebene}
+In dieser Variante stellt man aus der Gerade eine Hilfsebene auf welche die Gerade schneiden wird. Gegeben sind dafür der Punkt $P = (p_1 | p_2 | p_3)$ und die die gerade: $g : \vec{x} = \vec{A} + r * \vec{B}$. Aus der Gerade und dem Punkt bildet man nun eine Ebene in der Normalform:
+\begin{equation}
+0 = \vec{B} \circ \begin{bmatrix} \vec{x} & - & \vec{p} \end{bmatrix}
+\end{equation}
+Der Punkt x ist noch nicht bekannt. Der Normalvektor der Ebene ist $\vec{B}$ da die Ebene Orthogonal zur Geraden stehen soll. Diese Normalform formt man wie in Kapitel: \ref{NormalenformInKoordinatenform} beschrieben in die Koordinatenform um. Nun besitzt man die Ebenengleichung in der Koordinatenform $E : 0 = a_1 * x_1 + a_2 * x_2 + a_3 * x_3 - b$. Als nächsten Schritt bildet man den Kompaktvektor aus der Geradengleichung wie im Kapitel \ref{KompaktvektorDerGeradengleichung} beschrieben ist (Ergebniss: $\vec{c} = \begin{pmatrix} a_1 + r * b_1 \\ a_2 + r * b_2 \\ a_3 + r * b_3 \end{pmatrix}$) Nun setzt man den Kompaktvektor in die x werte der Ebenengleichung ein (Jeweils die Werte $a_1 + r * b_1$, $a_2 + r * b_2$ und $a_3 + r * b_3$ in die $x_1$, $x_2$ und $x_3$ einsetzen). Diese Gleichung löst man r auf und erhält somit den "Zeitpunkt" an dem die Gerade die Hilfsebene schneidet. Dies setzt man dann in die Geradengleichung ein (für r das Ergebnis von der Rechnung zuvor) und erhält somit den Schnittpunkt $S$ der Geraden mit der Ebene. Nun besitzt man wieder ein Punkt zu Punkt Abstandsproblem welches in \ref{Abstand2Punkte} beschrieben ist.
+
+\paragraph{Abstand Punkt - Gerade mittelst Extrempunktbestimmung}
+In diesem Verfahren wird der Abstand mithilfe eines Hilfsgraphen erlangt. Hierzu erstellt man zunächst aus der Geraden $g : \vec{x} = \vec{A} + r * \vec{B}$ den Kompaktvektor $\vec{c} = \begin{pmatrix} a_1 + r * b_1 \\ a_2 + r * b_2 \\ a_3 + r * b_3 \end{pmatrix}$. Daraufhin bildet man einer Vektor aus dem Kompaktvektor $\vec{c}$ und dem Vektor des Punktes $P = (p_1 | p_2 | p_3)$.
+\begin{equation}
+\vec{Pc} = \vec{c} - \vec{P} = \begin{pmatrix} a_1 + r * b_1 - p_1 \\ a_2 + r * b_2 - p_2 \\ a_3 + r * b_3 - p_3 \end{pmatrix}
+\end{equation}
+Nun erstellt man die Betragsform dieses Vektors:
+\begin{equation}
+| \vec{Pc} | = \sqrt{(a_1 + r * b_1 - p_1)^2 + (a_2 + r * b_2 - p_2)^2 + (a_3 + r * b_3 - p_3)^2}
+\end{equation}
+Diese Form kann man nun als Zweidimensionale Funktion in einem Graphen darstellen. Nun muss man nur noch das Minimum bestimmen und erlangt damit den kürzesten Abstand.
+
+\paragraph{Abstand Punkt - Gerade mittels Orthogonalität}
+Gegeben ist die Gerade $g : \vec{x} = \vec{A} + r * \vec{B}$ und der Punkt $P = (p_1 | p_2 | p_3)$. Zunächst bildet man den Kompaktvektor der Geraden g wie in Kapitel \ref{KompaktvektorDerGeradengleichung} beschrieben ist.
+\begin{equation}
+\vec{F_r} = \begin{pmatrix} a_1 + r * b_1 \\ a_2 + r * b_2 \\ a_3 + r * b_3 \end{pmatrix}
+\end{equation}
+Nun erstellt man aus dem Punkt des Kompaktvektors $F_r = (a_1 + r * b_1 | a_2 + r * b_2 | a_3 + r * b_3)$ und dem Zielpunkt den Vektor $\vec{PF_r}$
+\begin{equation}
+\vec{PF_r} = \begin{pmatrix}
+a_1 + r * b_1 - p_1 \\
+a_2 + r * b_2 - p_2 \\
+a_3 + r * b_3 - p_3
+\end{pmatrix}
+\end{equation}
+Da dieser Vektor zur Geraden Orthogonal sein muss muss gelten:
+\begin{equation}
+0 = \vec{PF_r} \circ \vec{B}
+\end{equation}
+Dies führt auf die Gleichung:
+\begin{equation}
+0 =  b_1 * (a_1 + r * b_1 - p_1) + b_2 * (a_2 + r * b_2 - p_2) + b_3 * (a_3 + r * b_3 - p_3)
+\end{equation}
+Nun kann man nach r Auflösen und erhält somit den Punkt $F$ der Geraden welcher sich Orthogonal zu unserem Gesuchten Punkt befindet. Nun haben wir wieder ein Punkt zu Punkt Abstands Problem welches wir wie in Kapitel \ref{Abstand2Punkte} lösen können. 
+
+\subsubsection{Abstand Punkt und Ebene} \label{PunktEbeneAbstand}
+Gegeben ist der Punkt $P$ und die Ebene $E$. Um den Abstand zwischen dem Punkt und der Ebene zu bestimmen benötigt man den Normalvektor der Ebene. Diesen muss man sich bilden, wenn die Ebenengleichung sich in der Parameterform befindet (Beschrieben in \ref{ParameterformInNormalform}). Wenn sie sich in der Normalform oder in der Koordinatenform befindet, kann man den Normalvektor ablesen. (In der Normalform ist es der Vektor $\vec{n}$ in der Gleichung und in der Koordinatenform ist es die Multiplikation mit den x ($a_1$, $a_2$ und $a_3$ in der Parameterform)). Nun spannt man eine Hilfsgerade mit dem Punkt $P$ auf. Die Gerade lautet $g : \vec{x} = \vec{OP} + r * \vec{n}$. Nun berechnet man den Schnittpunkt $S$ mit der Ebene. Nun besitzt man nur noch ein Punkt-Punkt Abstandsproblem welches man wie in \ref{Abstand2Punkte} löst.
+
+Eine andere Methode um den Abstand zwischen einem Punkt und einer Ebene zu bestimmen ist die Hesse'sche Normalform. Hier zu benötigt man eine Ebenengleichung in der Normlform mit einem Normaleinvektor. Der Normaleinvektor ist ein vereinheitlichter Normalvektor. Diesen bildet man wie in Kapitel: \ref{Einheitsvektor} beschrieben. Für den Abstand von einem Punkt $R = (r_1 | r_2 | r_3)$ zu der Ebene mit dem Normaleinheitsvektor zu bestimmen gilt:
+\begin{equation}
+d = | \vec{n} \circ \begin{pmatrix} \vec{r} & - & \vec{p} \end{pmatrix} |
+\end{equation}
+Um die Hesse'sche Normalform auf eine Koordinaten Gleichung $E : 0 = a_1 * x_1 + a_2 * x_2 + a_3 * x_3 - d$ anzuwenden gilt folgen Gleichung:
+\begin{equation}
+d = | \frac{a_1 * r_1 + a_2 * r_2 + a_3 * r_3 - d}{ | \vec{n} | } |
+\end{equation}
+R ist hierbei der Punkt welcher gesucht ist. ACHTUNG: für die Hesse'sche Normalform mit der Koordinatengleichung muss sich der Normalvektor NICHT in der Einheitsform befinden. Dies ist nur nötig in der Variante mit der Normalform (die 2 beschriebene Variante).
+
+\subsubsection{Abstand Gerade und Gerade windschief}
+Gegeben sind die Geraden $g : \vec{x} = \vec{A} + r * \vec{B}$ und $h : \vec{C} + s * \vec{D}$, welche Windschief zueinander stehen. Zunächst bestimmt man mit dem Skalarprodukt in einem LGS den Normalvektor zu den beiden Richtungsvektoren der Gerade:
+\begin{equation}
+\begin{matrix}
+0 = \begin{pmatrix} n_1 \\ n_2 \\ n_3 \end{pmatrix} \circ \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} \\
+\\
+0 = \begin{pmatrix} n_1 \\ n_2 \\ n_3 \end{pmatrix} \circ \begin{pmatrix} d_1 \\ d_2 \\ d_3 \end{pmatrix}
+\end{matrix}
+\end{equation}
+
+\begin{equation}
+\begin{matrix}
+0 = n_1 * b_1 + n_2 * b_2 + n_3 * b_3 \\
+0 = n_1 * d_1 + n_2 * d_2 + n_3 * d_3
+\end{matrix}
+\end{equation}
+Aus dem LGS folgt ein Normalvektor $\vec{n} = \begin{pmatrix} n_1 \\ n_2 \\ n_3 \end{pmatrix}$ . Nun Format man aus dem Vektor $\vec{n}$ und einem der beiden Ortsvektoren $\vec{A}$ oder $\vec{C}$ eine Ebenengleichung in der Normalform:
+\begin{equation}
+E : 0 = \vec{n} \circ \begin{bmatrix} \vec{x} & - & \vec{A} \end{bmatrix}
+\end{equation}
+Diese Ebenengleichung Formt man in die Koordinatenform um und erhält:
+\begin{equation}
+E : 0 = n_1 * x_1 + n_2 * x_2 + n_3 * x_3 - (n_1 * a_1 + n_2 * a_2 + n_3 * a_3)
+\end{equation}
+Diese Ebene ist parallel zur anderen Geraden (von welche man in der Ebenengleichung nicht den Ortsvektor genommen hat). Dies Führt dazu, das man jedlich beliebigen Punkt auf der Geraden nehmen kann und nur noch ein Punkt - Ebenen Problem hat. Dies kann man wie in Kapitel \ref{PunktEbeneAbstand} beschrieben wurde mit der Zweiten Hesse'schen Formel lösen.
+
+\subsubsection{Abstand Gerade und Gerade parallel}
+Gegeben sind zwei paralelle Geraden $g : \vec{x} = \vec{A} + r * \vec{B}$ und $h : \vec{C} + s * \vec{D}$. Man nimmt den Ortvektor der einen Gerade und erzeugt daraus ein Punkt - Gerade Problem (Beispielsweise nimmt man den Punkt $\vec{A}$ und die gerade $h$). Dieses Punkt - Gerade Problem kann man wie in Kapitel \ref{PunktGeradeAbstand} beschrieben lösen.
+
+\subsubsection{Abstand Gerade und Ebene parallel}
+Gegeben ist eine Gerade $g : \vec{x} = \vec{A} + r * \vec{B}$ und eine Ebene in einer beliebigen Form. Der Abstand zwischen der Geraden und Ebene ist zu jedem Zeitpunkt gleich groß, da sie parallel zu einander stehen. Dies bedeutet, dass man einen beliebigen Punkt der Gerade nehmen kann und somit ein Punkt - Ebene Problem erstellt. Dies kann man, wie in Kapitel \ref{PunktEbeneAbstand} beschrieben, lösen.
+
+\subsubsection{Abstand Ebene und Ebene parallel}
+Gegeben sind 2 Ebenen, welche parallel zu einander sind. Am einfachsten ist es dieses Problem zu lösen, wenn sich beide Ebenen in der Parameterform befinden. Ist dies nicht der Fall kann man sie in die Parameterform umformen \ref{UmformenDerEbenengleichung} .
+Die beiden Ebenen sind: $E_1 : \vec{x} = \vec{A} + r * \vec{B} + s * \vec{C}$ und $E_2 : \vec{x} = \vec{D} + g * \vec{E} + h * \vec{F}$. Nun erstellt man aus dem Ortsvektor der einen Ebene und dem Normalvektor eine Geradengleichung welche beide Ebenen schneidet:
+\begin{equation}
+g : \vec{x} = \vec{A} + i * \vec{n}
+\end{equation}
+Diese Geradengleichung setzt man nun gleich der zweiten Ebenengleichung (die nicht zum aufspannen der Ebene genutzt wurde) und Berechnet den "Zeitpunkt" des Schnittpunkt, von der Gerade mit der Ebene:
+\begin{equation}
+\vec{A} + i * \vec{n} = \vec{D} + g * \vec{E} + h * \vec{F} 
+\end{equation} 
+Das Ergebnis von i setzt man in die Gerade ein und erhält den Schnittpunkt $S$ der Gerade mit der Ebene. Nun hat man ein Punkt zu Punkt Abstands Problem welches man wie in Kapitel \ref{Abstand2Punkte} beschrieben lösen kann.
+
+\end{document}
+
